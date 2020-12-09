@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TuTasa.Pages.SettingsPage"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid>
+
+
+
+        <!--Bottom Menu-->
+        <Grid HeightRequest="60" BackgroundColor="White" VerticalOptions="End">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <BoxView BackgroundColor="Gray" VerticalOptions="Start" HeightRequest="2" Grid.Column="2"/>
+            <!--This one marks the one selected-->
+
+            <Label Grid.Column="0" Text="Home" FontAttributes="None"
+                   VerticalOptions="Center" VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center" HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="MenuGoHome"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Column="1" Text="Prices" FontAttributes="None"
+                   VerticalOptions="Center" VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center" HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="MenuGoPrices"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Column="2" Text="Settings" FontAttributes="Bold"
+                   VerticalOptions="Center" VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center" HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="MenuGoSettings"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+
+    </Grid>
+</ContentPage>
