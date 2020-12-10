@@ -31,18 +31,25 @@ namespace TuTasa.Scripts
         public void SortBy(string what)
         {
             List<Rate> allrates = currencies.Values.ToList(); //copy dictionary values into a list to modify them
-            List<Rate> sortedrates = new List<Rate>(); //make a new list to modify the order of the values 
-            float highestrate = 0f;
-
+            int ratessize = allrates.Count;
             switch (what)
             {
-                case "buyprice":
-                    foreach (Rate rate in allrates)
+                case "buyprice": //Pray to god this atrocity works
+                    currencies.Clear();
+                    for (int x = 0; x < ratessize; x++)
                     {
-                        if (highestrate < float.Parse(rate.buyrate))
+                        Rate highestrate = new Rate { buyrate = "0", sellrate = "0" };
+                        foreach (Rate rate in allrates)
                         {
-                            //HELP!
+                            if (float.Parse(highestrate.buyrate) < float.Parse(rate.buyrate))
+                            {
+                                highestrate = rate;
+                                //HELP!
+                            }
                         }
+                        allrates.Remove(highestrate);
+                        currencies.Add(highestrate.bankname, highestrate);
+
                     }
                     break;
                 case "sellprice":

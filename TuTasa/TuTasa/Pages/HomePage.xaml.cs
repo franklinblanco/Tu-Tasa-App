@@ -172,12 +172,17 @@ namespace TuTasa.Pages
         private void SortByBuyPrice(object sender, EventArgs args)
         {
             CacheManager.Instance.SortBy("buyprice");
+            ClearTable();
             PopulateTable();
         }
         private void SortBySellPrice(object sender, EventArgs args)
         {
             CacheManager.Instance.SortBy("sellprice");
             PopulateTable();
+        }
+        private void ClearTable()
+        {
+            TableContainer.Children.Clear();
         }
 
     }
