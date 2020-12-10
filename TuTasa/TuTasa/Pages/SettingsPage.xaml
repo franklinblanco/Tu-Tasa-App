@@ -28,6 +28,8 @@
                     <TapGestureRecognizer Tapped="MenuGoHome"/>
                 </Label.GestureRecognizers>
             </Label>
+            <Button Grid.Column="0" BackgroundColor="Transparent" Clicked="MenuGoHome"/>
+            
             <Label Grid.Column="1" Text="Prices" FontAttributes="None"
                    VerticalOptions="Center" VerticalTextAlignment="Center"
                    HorizontalTextAlignment="Center" HorizontalOptions="Center">
@@ -35,6 +37,8 @@
                     <TapGestureRecognizer Tapped="MenuGoPrices"/>
                 </Label.GestureRecognizers>
             </Label>
+            <Button Grid.Column="1" BackgroundColor="Transparent" Clicked="MenuGoPrices"/>
+            
             <Label Grid.Column="2" Text="Settings" FontAttributes="Bold"
                    VerticalOptions="Center" VerticalTextAlignment="Center"
                    HorizontalTextAlignment="Center" HorizontalOptions="Center">
@@ -42,6 +46,8 @@
                     <TapGestureRecognizer Tapped="MenuGoSettings"/>
                 </Label.GestureRecognizers>
             </Label>
+            <Button Grid.Column="2" BackgroundColor="Transparent" Clicked="MenuGoSettings"/>
+            
         </Grid>
 
     </Grid>
