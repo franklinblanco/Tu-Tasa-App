@@ -1,9 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TuTasa.Pages.HomePage">
+             x:Class="TuTasa.Pages.PricesPage"
 
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False">
     <Grid>
+        
+        
+        <StackLayout Margin="20,30,20,0" x:Name="TableContainer">
+
+
+            <!--Stacklayout with all the bank names-->
+        </StackLayout>
+
+
         <!--Bottom Menu-->
         <Grid HeightRequest="60" BackgroundColor="White" VerticalOptions="End">
 
@@ -13,10 +24,10 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
 
-            <BoxView BackgroundColor="Gray" VerticalOptions="Start" HeightRequest="2" Grid.Column="0"/>
-            <!--This one marks the one selected-->
-
-            <Label Grid.Column="0" Text="Home" FontAttributes="Bold"
+            <BoxView BackgroundColor="Gray" VerticalOptions="Start" HeightRequest="2" Grid.Column="1"/> <!--This one marks the one selected-->
+            
+            
+            <Label Grid.Column="0" Text="Home" FontAttributes="None"
                    VerticalOptions="Center" VerticalTextAlignment="Center"
                    HorizontalTextAlignment="Center" HorizontalOptions="Center">
                 <Label.GestureRecognizers>
@@ -25,7 +36,7 @@
             </Label>
             <Button Grid.Column="0" BackgroundColor="Transparent" Clicked="MenuGoHome"/>
 
-            <Label Grid.Column="1" Text="Prices" FontAttributes="None"
+            <Label Grid.Column="1" Text="Prices" FontAttributes="Bold"
                    VerticalOptions="Center" VerticalTextAlignment="Center"
                    HorizontalTextAlignment="Center" HorizontalOptions="Center">
                 <Label.GestureRecognizers>
@@ -33,7 +44,7 @@
                 </Label.GestureRecognizers>
             </Label>
             <Button Grid.Column="1" BackgroundColor="Transparent" Clicked="MenuGoPrices"/>
-
+            
             <Label Grid.Column="2" Text="Settings" FontAttributes="None"
                    VerticalOptions="Center" VerticalTextAlignment="Center"
                    HorizontalTextAlignment="Center" HorizontalOptions="Center">
@@ -42,7 +53,7 @@
                 </Label.GestureRecognizers>
             </Label>
             <Button Grid.Column="2" BackgroundColor="Transparent" Clicked="MenuGoSettings"/>
-
+            
         </Grid>
     </Grid>
     

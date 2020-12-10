@@ -26,7 +26,11 @@ namespace TuTasa.Pages
         }
         private void MenuGoPrices(object sender, EventArgs args)
         {
-            //Navigation.PushAsync(new HomePage());
+            Navigation.PushAsync(new PricesPage());
+        }
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
         }
     }
 }
