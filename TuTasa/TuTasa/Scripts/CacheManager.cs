@@ -28,5 +28,9 @@ namespace TuTasa.Scripts
             }
             return currencies.Values.ToArray();
         }
+        public void SortBy(string what)
+        {
+
+        }
     }
 }

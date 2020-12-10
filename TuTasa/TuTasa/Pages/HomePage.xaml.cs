@@ -69,11 +69,27 @@ namespace TuTasa.Pages
                 HorizontalTextAlignment = TextAlignment.Start,
                 VerticalTextAlignment = TextAlignment.Center
             };
+            Button sortbuybtn = new Button
+            {
+                BackgroundColor = Color.Transparent,
+            };
+            sortbuybtn.Clicked += SortByBuyPrice;
+
+            Button sortsellbutton = new Button
+            {
+                BackgroundColor = Color.Transparent,
+            };
+            sortsellbutton.Clicked += SortBySellPrice;
+
 
             firstCell.Children.Add(banktitleex, 0, 0);
             firstCell.Children.Add(currencytitleex, 1, 0);
             firstCell.Children.Add(buypriceex, 2, 0);
             firstCell.Children.Add(sellpriceex, 3, 0);
+
+            //Add buttons for Compra y venta (Sorting)
+            firstCell.Children.Add(sortbuybtn, 2, 0);
+            firstCell.Children.Add(sortsellbutton, 3, 0);
 
             TableContainer.Children.Add(firstCell);
 
@@ -153,5 +169,14 @@ namespace TuTasa.Pages
         {
             return true;
         }
+        private void SortByBuyPrice(object sender, EventArgs args)
+        {
+            CacheManager.Instance.SortBy("buyprice");
+        }
+        private void SortBySellPrice(object sender, EventArgs args)
+        {
+            CacheManager.Instance.SortBy("sellprice");
+        }
+
     }
 }
