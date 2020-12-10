@@ -7,7 +7,7 @@
 
     <Grid>
 
-
+        <Label Text="Nothing here for now..." HorizontalOptions="Center" VerticalOptions="Center" FontSize="Large"/>
 
         <!--Bottom Menu-->
         <Grid HeightRequest="60" BackgroundColor="White" VerticalOptions="End">
