@@ -13,40 +13,17 @@ namespace TuTasa.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomePage : ContentPage
     {
-        public IList<Rate> AllRates { get; private set; }
         public HomePage()
         {
             InitializeComponent();
             //SetHomePageData();
             PopulateTable();
         }
-        void SetHomePageData()
-        {
-            string wholePage = ConnectionManager.Instance.AskForHomePage();
-            Console.WriteLine("Whole msg is: " + wholePage);
-            string[] Items = wholePage.Split('/');
-
-            AllRates = new List<Rate>();
-            for (int x = 0; x < Items.Length; x++)
-            {
-                string[] data = Items[x].Split('-');
-                AllRates.Add(new Rate
-                {
-                    bankname = data[0],
-                    currency = data[1],
-                    buyrate = data[2],
-                    sellrate = data[3]
-                });
-            }
-            BindingContext = this;
-        }
 
         void PopulateTable()
         {
-            string wholePage = ConnectionManager.Instance.AskForHomePage();
-            Console.WriteLine("Whole msg is: " + wholePage);
-            string[] Items = wholePage.Split('/');
 
+            Rate[] rates = CacheManager.Instance.GetCurrencies();
             //The title grid
             Grid firstCell = new Grid
             {
@@ -108,9 +85,9 @@ namespace TuTasa.Pages
 
             TableContainer.Children.Add(separatorLine);
 
-            for (int x = 0; x < Items.Length; x++)
+            for (int x = 0; x < rates.Length; x++)
             {
-                string[] data = Items[x].Split('-');
+                Rate rate = rates[x];
                 Grid cell = new Grid
                 {
                     ColumnDefinitions =
@@ -125,28 +102,28 @@ namespace TuTasa.Pages
 
                 Label banktitle = new Label
                 {
-                    Text = data[0],
+                    Text = rate.bankname,
                     FontSize = 17,
                     HorizontalTextAlignment = TextAlignment.Start,
                     VerticalTextAlignment = TextAlignment.Center
                 };
                 Label currencytitle = new Label
                 {
-                    Text = data[1],
+                    Text = rate.currency,
                     FontSize = 17,
                     HorizontalTextAlignment = TextAlignment.Start,
                     VerticalTextAlignment = TextAlignment.Center
                 };
                 Label buyprice = new Label
                 {
-                    Text = data[2],
+                    Text = rate.buyrate,
                     FontSize = 17,
                     HorizontalTextAlignment = TextAlignment.Start,
                     VerticalTextAlignment = TextAlignment.Center
                 };
                 Label sellprice = new Label
                 {
-                    Text = data[3],
+                    Text = rate.sellrate,
                     FontSize = 17,
                     HorizontalTextAlignment = TextAlignment.Start,
                     VerticalTextAlignment = TextAlignment.Center
