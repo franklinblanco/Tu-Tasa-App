@@ -11,9 +11,5 @@ namespace TuTasa.Scripts
         public string buyrate { get; set; }
         public string sellrate { get; set; }
 
-        public override string ToString()
-        {
-            return bankname + " Buys at: " + buyrate + "DOP Sells at: " + sellrate + "DOP";
-        }
     }
 }
