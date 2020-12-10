@@ -13,6 +13,8 @@ namespace TuTasa.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomePage : ContentPage
     {
+        Label buypriceex;
+        Label sellpriceex;
         public HomePage()
         {
             InitializeComponent();
@@ -53,7 +55,7 @@ namespace TuTasa.Pages
                 HorizontalTextAlignment = TextAlignment.Start,
                 VerticalTextAlignment = TextAlignment.Center
             };
-            Label buypriceex = new Label
+            buypriceex = new Label
             {
                 Text = "Compra",
                 FontAttributes = FontAttributes.Bold,
@@ -61,7 +63,7 @@ namespace TuTasa.Pages
                 HorizontalTextAlignment = TextAlignment.Start,
                 VerticalTextAlignment = TextAlignment.Center
             };
-            Label sellpriceex = new Label
+            sellpriceex = new Label
             {
                 Text = "Venta",
                 FontAttributes = FontAttributes.Bold,
@@ -174,11 +176,16 @@ namespace TuTasa.Pages
             CacheManager.Instance.SortBy("buyprice");
             ClearTable();
             PopulateTable();
+            sellpriceex.TextColor = Color.Gray;
+            buypriceex.TextColor = Color.Green;
         }
         private void SortBySellPrice(object sender, EventArgs args)
         {
             CacheManager.Instance.SortBy("sellprice");
+            ClearTable();
             PopulateTable();
+            buypriceex.TextColor = Color.Gray;
+            sellpriceex.TextColor = Color.Green;
         }
         private void ClearTable()
         {

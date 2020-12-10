@@ -53,6 +53,22 @@ namespace TuTasa.Scripts
                     }
                     break;
                 case "sellprice":
+                    currencies.Clear();
+                    for (int x = 0; x < ratessize; x++)
+                    {
+                        Rate highestrate = new Rate { buyrate = "0", sellrate = "0" };
+                        foreach (Rate rate in allrates)
+                        {
+                            if (float.Parse(highestrate.sellrate) < float.Parse(rate.sellrate))
+                            {
+                                highestrate = rate;
+                                //HELP!
+                            }
+                        }
+                        allrates.Remove(highestrate);
+                        currencies.Add(highestrate.bankname, highestrate);
+
+                    }
                     break;
             }
         }
