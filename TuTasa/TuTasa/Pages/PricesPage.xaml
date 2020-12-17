@@ -25,9 +25,9 @@
             </Grid.ColumnDefinitions>
 
             <BoxView BackgroundColor="Gray" VerticalOptions="Start" HeightRequest="2" Grid.Column="1"/> <!--This one marks the one selected-->
-            
-            
-            <Label Grid.Column="0" Text="Home" FontAttributes="None"
+
+
+            <Label Grid.Column="0" Text="Inicio" FontAttributes="None"
                    VerticalOptions="Center" VerticalTextAlignment="Center"
                    HorizontalTextAlignment="Center" HorizontalOptions="Center">
                 <Label.GestureRecognizers>
@@ -36,7 +36,7 @@
             </Label>
             <Button Grid.Column="0" BackgroundColor="Transparent" Clicked="MenuGoHome"/>
 
-            <Label Grid.Column="1" Text="Prices" FontAttributes="Bold"
+            <Label Grid.Column="1" Text="Precios" FontAttributes="Bold"
                    VerticalOptions="Center" VerticalTextAlignment="Center"
                    HorizontalTextAlignment="Center" HorizontalOptions="Center">
                 <Label.GestureRecognizers>
@@ -44,8 +44,8 @@
                 </Label.GestureRecognizers>
             </Label>
             <Button Grid.Column="1" BackgroundColor="Transparent" Clicked="MenuGoPrices"/>
-            
-            <Label Grid.Column="2" Text="Settings" FontAttributes="None"
+
+            <Label Grid.Column="2" Text="Ajustes" FontAttributes="None"
                    VerticalOptions="Center" VerticalTextAlignment="Center"
                    HorizontalTextAlignment="Center" HorizontalOptions="Center">
                 <Label.GestureRecognizers>
